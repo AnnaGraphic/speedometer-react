@@ -42,7 +42,10 @@ function App() {
     if (carState.speed >0) {
       dispatch({type: "brake"});
     }
-    console.log('brake');
+  }
+
+  const startCar = () => {
+    (carState.speed <= 0 && carState.started) ? dispatch({type: "turnOff"}) : dispatch({type: "turnOn"});
   }
 
   return (
@@ -50,6 +53,8 @@ function App() {
       <Car />
       <button onClick={accelerate}>Accelerate</button>
       <button onClick={brake}>Brake</button>
+      <button
+          onClick={startCar} >{carState.started ? 'stop' : 'start'}</button>
     </div>
   );
 }
