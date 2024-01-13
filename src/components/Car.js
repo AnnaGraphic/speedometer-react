@@ -25,6 +25,7 @@ export default function Car() {
 
   return (
     <div className="car">
+      <h1>{carState.started ? 'engine: on' : 'engine: off'}</h1>
       <ReactSpeedometer
         maxValue={80}
         value={carState.speed}

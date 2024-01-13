@@ -30,7 +30,7 @@ const reducer = (state, action) => {
 }
 
 function App() {
-  const initialState = {started: true, speed: 0};
+  const initialState = {started: false, speed: 0};
   const [carState, dispatch]= useReducer(reducer, initialState);
 
   return (
