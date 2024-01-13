@@ -26,13 +26,17 @@ export default function Car() {
   return (
     <div className="car">
       <ReactSpeedometer
+        maxValue={80}
+        value={carState.speed}
         needleTransitionDuration={4000}
         needleTransition="easeElastic"
         />
-      <button onClick={accelerate}>Accelerate</button>
-      <button onClick={brake}>Brake</button>
-      <button
-          onClick={startCar} >{carState.started ? 'stop' : 'start'}</button>
+      <div className="instrumentContainer">
+        <button onClick={accelerate}>Accelerate</button>
+        <button onClick={brake}>Brake</button>
+        <button
+            onClick={startCar} >{carState.started ? 'stop' : 'start'}</button>
+      </div>
     </div>
   )
 }
