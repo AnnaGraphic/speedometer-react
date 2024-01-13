@@ -1,6 +1,8 @@
 import "./App.css";
 import Car from "./components/Car";
-import { useReducer } from "react";
+import { useReducer, createContext } from "react";
+
+export const CarContext = createContext();
 
 const reducer = (state, action) => {
   switch(action.type) {
@@ -31,31 +33,12 @@ function App() {
   const initialState = {started: true, speed: 0};
   const [carState, dispatch]= useReducer(reducer, initialState);
 
-  const accelerate = () => {
-    if (carState.started === true) {
-      dispatch({type: "accelerate"});
-      //is not workin since dispatch is async
-      //console.log('Current state after accelerate:', carState);
-    }
-  };
-  const brake = () => {
-    if (carState.speed >0) {
-      dispatch({type: "brake"});
-    }
-  }
-
-  const startCar = () => {
-    (carState.speed <= 0 && carState.started) ? dispatch({type: "turnOff"}) : dispatch({type: "turnOn"});
-  }
-
   return (
+    <CarContext.Provider value={{ carState, dispatch }}>
     <div className="App">
       <Car />
-      <button onClick={accelerate}>Accelerate</button>
-      <button onClick={brake}>Brake</button>
-      <button
-          onClick={startCar} >{carState.started ? 'stop' : 'start'}</button>
     </div>
+    </CarContext.Provider>
   );
 }
 
