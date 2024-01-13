@@ -8,12 +8,21 @@ const reducer = (state, action) => {
       console.log('acc', state.speed);
       return { ...state, speed: state.speed +5}
     }
-    case "break":{
+    case "brake":{
+      console.log('brake', state.speed);
       return { ...state, speed: state.speed -5}
+    }
+    case "turnOff":{
+      console.log('turn off', state.started);
+      return {...state, started: false, speed: 0 };
+    }
+    case "turnOn": {
+      console.log('turn on', state.started);
+      return { ...state, started: true };
     }
     // better way to handle default?
     default: {
-      return state;
+      return { ...state, speed: 0, started: true }
     }
   }
 }
@@ -23,14 +32,15 @@ function App() {
   const [carState, dispatch]= useReducer(reducer, initialState);
 
   const accelerate = () => {
-    if (initialState.started === true) {
+    if (carState.started === true) {
       dispatch({type: "accelerate"});
-      console.log('Current state after accelerate:', carState);
+      //is not workin since dispatch is async
+      //console.log('Current state after accelerate:', carState);
     }
   };
   const brake = () => {
-    if (initialState.speed >0) {
-      dispatch({type: "accelerate"});
+    if (carState.speed >0) {
+      dispatch({type: "brake"});
     }
     console.log('brake');
   }
