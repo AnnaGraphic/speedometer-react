@@ -7,6 +7,11 @@ body {
   margin: 0;
 }
 
+h1 {
+  color: white;
+  text-shadow: 3px 3px 12px rgb(2, 6, 121);
+}
+
 .App {
   display: flex;
   flex-direction: column;
@@ -33,4 +38,14 @@ button {
   background-color: pink;
   border-radius: 0.3em;
   border-style: none;
+}
+
+button:hover {
+  color: rgb(193, 1, 97);
+  background-color: rgb(248, 173, 185);
+}
+
+button:active {
+  transform: translateY(2px);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
