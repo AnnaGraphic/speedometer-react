@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/speedometer-react/static/css/main.2b6bc1c7.css",
+    "main.js": "/speedometer-react/static/js/main.23240331.js",
+    "static/media/race.jpg": "/speedometer-react/static/media/race.a811d8d0c724e57d441c.jpg",
+    "index.html": "/speedometer-react/index.html",
+    "main.2b6bc1c7.css.map": "/speedometer-react/static/css/main.2b6bc1c7.css.map",
+    "main.23240331.js.map": "/speedometer-react/static/js/main.23240331.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2b6bc1c7.css",
+    "static/js/main.23240331.js"
+  ]
+}

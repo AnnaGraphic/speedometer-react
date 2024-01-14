@@ -1,7 +1,7 @@
 {
   "name": "spa-store-use_reducer",
   "version": "0.1.0",
-  "homepage": "https://annaraphic.github.io/speedometer-react/",
+  "homepage": "https://annagraphic.github.io/speedometer-react/",
   "private": true,
   "dependencies": {
     "react": "17.0.0",
